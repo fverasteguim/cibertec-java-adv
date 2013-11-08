@@ -59,7 +59,10 @@ public class Autor {
     public void setNombres(String nombres) {
         this.nombres = nombres;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Autor{" + "idAutor=" + idAutor + ", nombres=" + nombres + ", apePaterno=" + apePaterno + ", apeMaterno=" + apeMaterno + '}';
+    }
     
 }
