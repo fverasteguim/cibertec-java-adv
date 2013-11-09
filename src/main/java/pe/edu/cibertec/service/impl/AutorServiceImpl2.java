@@ -4,6 +4,7 @@
  */
 package pe.edu.cibertec.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,8 @@ import pe.edu.cibertec.service.AutorService;
 public class AutorServiceImpl2 implements AutorService{
 
     public List<Autor> list() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        System.out.println("Ahora con Servicio 2");
+        return new ArrayList();
     }
 
     public Autor getById(Integer id) {

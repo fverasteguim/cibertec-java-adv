@@ -18,7 +18,7 @@
 <s:form action="guardarAutor">
         <s:textfield label="Nombres" name="autor.nombres"/>
 	<s:textfield label="Apellido Paterno" name="autor.apePaterno"/>
-	<s:textfield label="Apellido Materno" name="autor.apeMaterno"/>
+        <s:textfield label="Apellido Materno" name="autor.apeMaterno"/>
 	<s:submit value="Guardar"/>
 </s:form>
  

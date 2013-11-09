@@ -19,7 +19,17 @@ public class AutorAction {
     private List<Autor> autores;
     
     private Autor autor;
+    
+    private Integer id;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    
     public Autor getAutor() {
         return autor;
     }
@@ -50,6 +60,13 @@ public class AutorAction {
     
     public String guardarAutor() throws Exception {
         autorService.insert(autor);
+        return "success";
+    }
+    
+    public String eliminarAutor() throws Exception {
+        Autor autor = new Autor();
+        autor.setIdAutor(id);
+        autorService.delete(autor);
         return "success";
     }
     

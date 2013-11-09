@@ -29,7 +29,9 @@ public class AutorDaoImpl implements AutorDao{
     }
 
     public Autor getById(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Query q = em.createQuery("select a from Autor a where a.idAutor = :idAutor");
+        q.setParameter("idAutor", id);
+        return (Autor)q.getSingleResult();
     }
 
     
@@ -43,7 +45,7 @@ public class AutorDaoImpl implements AutorDao{
     }
 
     public void delete(Autor autor) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        em.remove(autor);
     }
     
 }

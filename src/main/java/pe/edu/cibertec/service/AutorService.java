@@ -12,7 +12,6 @@ import pe.edu.cibertec.model.Autor;
  *
  * @author francisco
  */
-@Service("autorService")
 public interface AutorService {
     public List<Autor> list();
     public Autor getById(Integer id);

@@ -5,6 +5,7 @@
   <persistence-unit name="JpaPersistenceUnit" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>pe.edu.cibertec.model.Autor</class>
+    <class>pe.edu.cibertec.model.Auditoria</class>
     <properties>
         <property name="eclipselink.weaving" value="false"/>
     </properties>

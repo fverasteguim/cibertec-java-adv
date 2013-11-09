@@ -41,8 +41,10 @@ public class AutorServiceImpl implements AutorService{
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    @Transactional
     public void delete(Autor autor) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        autor = autorDao.getById(autor.getIdAutor());
+        autorDao.delete(autor);
     }
     
 }

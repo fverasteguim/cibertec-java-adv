@@ -32,7 +32,12 @@
 			class="autorAction" method="guardarAutor">
 			<result name="success" type="redirectAction">autorList</result>
 		</action>
-		
+                
+                <action name="eliminarAutor" 
+			class="autorAction" method="eliminarAutor">
+			<result name="success" type="redirectAction">autorList</result>
+		</action>
+                
 	</package>
 	
 	
