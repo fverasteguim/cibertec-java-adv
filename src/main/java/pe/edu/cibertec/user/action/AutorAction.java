@@ -5,8 +5,12 @@
 package pe.edu.cibertec.user.action;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import pe.edu.cibertec.exception.BusinessException1;
+import pe.edu.cibertec.exception.BusinessException2;
 import pe.edu.cibertec.model.Autor;
 import pe.edu.cibertec.service.AutorService;
 
@@ -58,8 +62,14 @@ public class AutorAction {
         return "success";
     }
     
-    public String guardarAutor() throws Exception {
-        autorService.insert(autor);
+    public String guardarAutor() {
+        try {
+            autorService.insert(autor);
+        } catch (BusinessException1 ex) {
+            Logger.getLogger(AutorAction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (BusinessException2 ex) {
+            Logger.getLogger(AutorAction.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return "success";
     }
     

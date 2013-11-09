@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pe.edu.cibertec.dao.AutorDao;
+import pe.edu.cibertec.exception.BusinessException1;
+import pe.edu.cibertec.exception.BusinessException2;
 import pe.edu.cibertec.model.Autor;
 import pe.edu.cibertec.service.AutorService;
 
@@ -32,9 +34,11 @@ public class AutorServiceImpl implements AutorService{
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    @Transactional
-    public void insert(Autor autor) {
-        autorDao.insert(autor);
+    public void insert(Autor autor) throws BusinessException1, BusinessException2{
+        
+            autorDao.insert(autor);
+            //throw new BusinessException1("Exception de tipo 1 que genera rollback");
+            throw new BusinessException2("Exception de tipo 2 que no genera rollback");
     }
 
     public void update(Autor autor) {

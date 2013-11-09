@@ -33,6 +33,6 @@ public class ApplicationInterceptor {
     @After("execution(* pe.edu.cibertec.service.impl.AutorServiceImpl.insert(pe.edu.cibertec.model.Autor)) && args(autor)")
     public void afterInsertAutorInterceptor(Autor autor) {
         System.out.println("After inserting: " + autor);
-        service.insert(autor);
+        //service.insert(autor);
     }
 }

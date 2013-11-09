@@ -38,7 +38,7 @@
         <property name="entityManagerFactory" ref="entityManagerFactory" />
     </bean>
  
-    <tx:annotation-driven />
+    <tx:annotation-driven order="1"/>
 
     <bean id="testBo" class="pe.edu.cibertec.user.bo.TestBo">
         <constructor-arg value="Hola" />
@@ -68,8 +68,19 @@
             <aop:pointcut id="beforeDeleteAutorPointCut" expression="execution(* pe.edu.cibertec.service.impl.AutorServiceImpl.delete(..))"/>
             <aop:before method="beforeDeleteAutorInterceptor" pointcut-ref="beforeDeleteAutorPointCut" />
         </aop:aspect>-->
+        <aop:pointcut id="defaultServiceOperation"
+          expression="execution(* pe.edu.cibertec.service.impl.AutorServiceImpl.*(..))"/>
+        <aop:advisor pointcut-ref="defaultServiceOperation" advice-ref="myAdvice" order="2"/>
     </aop:config>
-        
+    
+    <tx:advice id="myAdvice">
+        <tx:attributes>
+            <tx:method name="list*" read-only="true"/>
+            <tx:method name="*" propagation="REQUIRES_NEW" 
+                       rollback-for="pe.edu.cibertec.exception.BusinessException1" 
+                       no-rollback-for="pe.edu.cibertec.exception.BusinessException2" />
+        </tx:attributes>
+    </tx:advice>
     
  
 </beans>

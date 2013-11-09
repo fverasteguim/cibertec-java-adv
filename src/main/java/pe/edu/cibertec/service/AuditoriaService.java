@@ -6,6 +6,7 @@ package pe.edu.cibertec.service;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
+import pe.edu.cibertec.exception.BusinessException1;
 import pe.edu.cibertec.model.Auditoria;
 import pe.edu.cibertec.model.Autor;
 
