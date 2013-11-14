@@ -39,5 +39,9 @@ public class AutorServiceImpl2 implements AutorService{
     public void delete(Autor autor) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+
+    public String generateAutorSignature(Autor autor) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
     
 }

@@ -50,5 +50,20 @@ public class AutorServiceImpl implements AutorService{
         autor = autorDao.getById(autor.getIdAutor());
         autorDao.delete(autor);
     }
+
+    public String generateAutorSignature(Autor autor) {
+        autor = autorDao.getById(autor.getIdAutor());
+        return autor.toString();
+    }
+
+    public AutorDao getAutorDao() {
+        return autorDao;
+    }
+
+    public void setAutorDao(AutorDao autorDao) {
+        this.autorDao = autorDao;
+    }
+    
+    
     
 }

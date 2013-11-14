@@ -20,4 +20,5 @@ public interface AutorService {
     public void insert(Autor autor) throws BusinessException1, BusinessException2;
     public void update(Autor autor);
     public void delete(Autor autor);
+    public String generateAutorSignature(Autor autor);
 }
