@@ -38,6 +38,18 @@
 			<result name="success" type="redirectAction">autorList</result>
 		</action>
                 
+                <action name="login">
+                    <result name="success">pages/login.jsp</result>
+                </action>
+                
+                <action name="loginfailed">
+                    <result name="success">pages/login.jsp</result>
+                </action>
+                
+                <action name="logout" >
+                    <result name="success">pages/login.jsp</result>
+                </action>
+                
 	</package>
 	
 	
