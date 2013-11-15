@@ -4,6 +4,7 @@
     Author     : Francisco
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
@@ -12,13 +13,15 @@
 </head>
  
 <body>
-<h1>Struts 2 Example</h1>
+    <table>
+        <tr>
+            <td><h1>Struts 2 Example</h1></td>
+            <td style="text-align: right;"><a href="<c:url value='j_spring_security_logout' />">Logout</a></td>
+        </tr>
+    </table>
+
  
-<s:if test="hasActionErrors()">
-   <div class="errors">
-      <s:actionerror/>
-   </div>
-</s:if>
+
 <table>
     <tr>
     <th>Nombres</th>
