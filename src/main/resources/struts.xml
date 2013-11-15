@@ -26,11 +26,13 @@
                 <action name="nuevoAutor" 
 			class="autorAction" method="nuevoAutor">
 			<result name="success">pages/nuevoAutor.jsp</result>
+                        
 		</action>
                 
                 <action name="guardarAutor" 
 			class="autorAction" method="guardarAutor">
 			<result name="success" type="redirectAction">autorList</result>
+                        <result name="accessDenied">pages/accessdenied.jsp</result>
 		</action>
                 
                 <action name="eliminarAutor" 

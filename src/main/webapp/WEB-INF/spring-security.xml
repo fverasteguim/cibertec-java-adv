@@ -15,10 +15,13 @@
 		<intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
                 <form-login login-page="/login" default-target-url="/autorList"
 			authentication-failure-url="/loginfailed" />
-		<logout logout-success-url="/logout" />
+		<logout logout-success-url="/logout" />    
+                <session-management invalid-session-url="/login" />  
+                
 	</http>
  
 	<authentication-manager>
+          
 	  <authentication-provider>
 	    <user-service>
 		<user name="francisco" password="123456" authorities="ROLE_USER" />
@@ -41,5 +44,5 @@
 	   </authentication-provider>
           
 	</authentication-manager>
- 
+        
 </beans:beans>

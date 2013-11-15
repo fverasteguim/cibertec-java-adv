@@ -69,6 +69,9 @@ public class AutorAction {
             Logger.getLogger(AutorAction.class.getName()).log(Level.SEVERE, null, ex);
         } catch (BusinessException2 ex) {
             Logger.getLogger(AutorAction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(AutorAction.class.getName()).log(Level.SEVERE, null, ex);
+            return "accessDenied";
         }
         return "success";
     }
