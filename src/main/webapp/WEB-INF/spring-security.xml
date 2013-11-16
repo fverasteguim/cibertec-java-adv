@@ -42,6 +42,8 @@
  
 		/>
 	   </authentication-provider>
+           
+           <authentication-provider ref="myAuthenticationProvider"/>
           
 	</authentication-manager>
         
