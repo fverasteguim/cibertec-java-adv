@@ -27,6 +27,7 @@ public class MyAuthenticationProvider implements AuthenticationProvider{
         if (name.equals("usuario") && password.equals("password123")) {
             List<GrantedAuthority> grantedAuths = new ArrayList();
             grantedAuths.add(new SimpleGrantedAuthority("ROLE_USER"));
+            grantedAuths.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
             Authentication auth = new UsernamePasswordAuthenticationToken(name, password, grantedAuths);
             return auth;
         } else {
