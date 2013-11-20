@@ -4,6 +4,7 @@
  */
 package pe.edu.cibertec.service.impl;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.cibertec.dao.UserDao;
@@ -20,18 +21,18 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private UserDao userDao;
     
-    public void list() {
-        System.out.println("Listing in service");
-        userDao.list();
+    public List<User> list() {
+        return userDao.list();
         
     }
 
     public void insert(User user) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        userDao.insert(user);
     }
 
     public void delete(User user) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        
+        userDao.delete(user);
     }
 
 }

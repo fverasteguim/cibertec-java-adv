@@ -4,6 +4,7 @@
  */
 package pe.edu.cibertec.service;
 
+import java.util.List;
 import pe.edu.cibertec.model.User;
 
 /**
@@ -11,7 +12,7 @@ import pe.edu.cibertec.model.User;
  * @author francisco
  */
 public interface UserService {
-    public void list();
+    public List<User> list();
     public void insert(User user);
     public void delete(User user);
 }

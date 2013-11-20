@@ -5,6 +5,9 @@
 package pe.edu.cibertec.dao.impl;
 
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import pe.edu.cibertec.dao.RoleDao;
 import pe.edu.cibertec.model.Role;
@@ -13,19 +16,27 @@ import pe.edu.cibertec.model.Role;
  *
  * @author JAVA-ADV-VS
  */
-@Repository("userDao")
+@Repository("roleDao")
 public class RoleDaoImpl implements RoleDao{
 
+    @PersistenceContext
+    EntityManager em;
+    
     public List<Role> list() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Query q = em.createQuery("select r from Role r");
+        return q.getResultList();
     }
 
     public void insert(Role role) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        em.persist(role);
     }
 
     public void delete(Role role) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        em.remove(role);
+    }
+
+    public void update(Role role) {
+        em.merge(role);
     }
     
 }

@@ -52,6 +52,18 @@
                     <result name="success">pages/login.jsp</result>
                 </action>
                 
+                <action name="mainMenu">
+                    <result name="success">pages/mainMenu.jsp</result>
+                </action>
+                
+                <action name="usuariosList" class="userAction" method="listarUsuarios">
+                    <result name="success">pages/listUser.jsp</result>
+                </action>
+                
+                <action name="rolesList" class="roleAction" method="listarRoles">
+                    <result name="success">pages/listRole.jsp</result>
+                </action>
+                
 	</package>
 	
 	

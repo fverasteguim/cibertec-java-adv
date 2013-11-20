@@ -15,4 +15,5 @@ public interface RoleDao {
     List<Role> list();
     void insert(Role role);
     void delete(Role role);
+    void update(Role role);
 }

@@ -4,13 +4,40 @@
  */
 package pe.edu.cibertec.user.action;
 
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import pe.edu.cibertec.model.Role;
+import pe.edu.cibertec.service.RoleService;
+
 /**
  *
  * @author JAVA-ADV-VS
  */
 public class RoleAction {
     
+    @Autowired
+    private RoleService service;
+    private List<Role> roles;
+    private Integer id;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
+    
     public String listarRoles() {
+        roles = service.listRoles();
         return "success";
     }
     

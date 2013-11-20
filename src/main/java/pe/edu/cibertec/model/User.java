@@ -20,7 +20,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="user")
 public class User {
-    @Id()
+    @Id
     @Column(name="USER_ID")
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer idUser;
@@ -30,4 +30,46 @@ public class User {
     
     @ManyToMany
     private List<Role> roles;
+
+    public Integer getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(Integer idUser) {
+        this.idUser = idUser;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
+    
+    
 }
