@@ -56,10 +56,24 @@
                     <result name="success">pages/mainMenu.jsp</result>
                 </action>
                 
+                <!-- Usuarios -->
                 <action name="usuariosList" class="userAction" method="listarUsuarios">
                     <result name="success">pages/listUser.jsp</result>
                 </action>
                 
+                <action name="nuevoUsuario" class="userAction" method="nuevoUsuario">
+                    <result name="success">pages/nuevoUser.jsp</result>
+                </action>
+                
+                <action name="guardarUsuario" class="userAction" method="insertarUsuario">
+                    <result name="success">pages/listUser.jsp</result>
+                </action>
+                
+                <action name="eliminarUsuario" class="userAction" method="eliminarUsuario">
+                    <result name="success">pages/listUser.jsp</result>
+                </action>
+                
+                <!-- Roles -->
                 <action name="rolesList" class="roleAction" method="listarRoles">
                     <result name="success">pages/listRole.jsp</result>
                 </action>
