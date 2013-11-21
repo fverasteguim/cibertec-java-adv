@@ -12,6 +12,7 @@ import pe.edu.cibertec.model.User;
  * @author francisco
  */
 public interface UserDao {
+    User getById(Integer id);
     List<User> list();
     void insert(User user);
     void update(User user);

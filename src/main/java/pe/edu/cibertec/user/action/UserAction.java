@@ -2,6 +2,7 @@ package pe.edu.cibertec.user.action;
 
 import pe.edu.cibertec.user.bo.UserBo;
 import com.opensymphony.xwork2.ActionSupport;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import pe.edu.cibertec.model.Role;
@@ -25,8 +26,6 @@ public class UserAction extends ActionSupport {
     
     private Integer id;
 
-   
-
     public String listarUsuarios() throws Exception {
 
         usuarios = service.list();
@@ -45,6 +44,8 @@ public class UserAction extends ActionSupport {
     }
 
     public String eliminarUsuario() {
+        usuario = new User();
+        usuario.setIdUser(id);
         service.delete(usuario);
         return SUCCESS;
     }

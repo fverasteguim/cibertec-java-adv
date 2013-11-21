@@ -66,11 +66,11 @@
                 </action>
                 
                 <action name="guardarUsuario" class="userAction" method="insertarUsuario">
-                    <result name="success">pages/listUser.jsp</result>
+                    <result name="success" type="redirectAction">usuariosList</result>
                 </action>
                 
                 <action name="eliminarUsuario" class="userAction" method="eliminarUsuario">
-                    <result name="success">pages/listUser.jsp</result>
+                    <result name="success" type="redirectAction">usuariosList</result>
                 </action>
                 
                 <!-- Roles -->

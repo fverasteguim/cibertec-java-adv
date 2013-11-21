@@ -38,5 +38,11 @@ public class RoleDaoImpl implements RoleDao{
     public void update(Role role) {
         em.merge(role);
     }
+
+    public Role getById(Integer id) {
+        Query q = em.createQuery("select r from Role r where r.idRole = :idRole");
+        q.setParameter("idRole", id);
+        return (Role)q.getSingleResult();
+    }
     
 }

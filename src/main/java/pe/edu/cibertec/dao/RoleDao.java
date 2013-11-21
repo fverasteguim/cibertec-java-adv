@@ -12,6 +12,7 @@ import pe.edu.cibertec.model.Role;
  * @author JAVA-ADV-VS
  */
 public interface RoleDao {
+    Role getById(Integer id);
     List<Role> list();
     void insert(Role role);
     void delete(Role role);

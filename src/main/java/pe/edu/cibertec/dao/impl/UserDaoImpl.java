@@ -10,6 +10,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import pe.edu.cibertec.dao.UserDao;
+import pe.edu.cibertec.model.Autor;
 import pe.edu.cibertec.model.User;
 
 /**
@@ -37,5 +38,11 @@ public class UserDaoImpl implements UserDao{
 
     public void update(User user) {
         em.merge(user);
+    }
+
+    public User getById(Integer id) {
+        Query q = em.createQuery("select u from User u where u.idUser = :idUser");
+        q.setParameter("idUser", id);
+        return (User)q.getSingleResult();
     }
 }

@@ -19,7 +19,7 @@
         <s:textfield label="Username" name="usuario.username"/>
 	<s:textfield label="Password" name="usuario.password"/>
         <s:textfield label="Habilitado" name="usuario.enabled"/>
-        <s:select label="Rol" list="roles" name="idRole" listKey="idRole" listValue="name"/>
+        <s:select label="Rol" list="roles" name="usuario.idRole" listKey="idRole" listValue="name"/>
 	<s:submit value="Guardar"/>
 </s:form>
  
