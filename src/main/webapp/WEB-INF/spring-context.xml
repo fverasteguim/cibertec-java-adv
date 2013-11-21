@@ -57,6 +57,14 @@
         
     </bean>
     
+    <bean id="userAction" class="pe.edu.cibertec.user.action.UserAction">
+        
+    </bean>
+    
+    <bean id="roleAction" class="pe.edu.cibertec.user.action.RoleAction">
+        
+    </bean>
+    
     <aop:config>
         
         <!--

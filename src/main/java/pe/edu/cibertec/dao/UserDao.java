@@ -4,10 +4,16 @@
  */
 package pe.edu.cibertec.dao;
 
+import java.util.List;
+import pe.edu.cibertec.model.User;
+
 /**
  *
  * @author francisco
  */
 public interface UserDao {
-    void list();
+    List<User> list();
+    void insert(User user);
+    void update(User user);
+    void delete(User user);
 }
