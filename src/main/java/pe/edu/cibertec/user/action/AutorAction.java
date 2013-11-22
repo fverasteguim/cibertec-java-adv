@@ -69,9 +69,6 @@ public class AutorAction {
             Logger.getLogger(AutorAction.class.getName()).log(Level.SEVERE, null, ex);
         } catch (BusinessException2 ex) {
             Logger.getLogger(AutorAction.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (Exception ex) {
-            Logger.getLogger(AutorAction.class.getName()).log(Level.SEVERE, null, ex);
-            return "accessDenied";
         }
         return "success";
     }
@@ -79,7 +76,13 @@ public class AutorAction {
     public String eliminarAutor() throws Exception {
         Autor autor = new Autor();
         autor.setIdAutor(id);
-        autorService.delete(autor);
+        try{
+            autorService.delete(autor);
+        } catch (Exception ex) {
+            Logger.getLogger(AutorAction.class.getName()).log(Level.SEVERE, null, ex);
+            return "accessDenied";
+        }
+        
         return "success";
     }
     

@@ -7,6 +7,7 @@ package pe.edu.cibertec.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pe.edu.cibertec.dao.RoleDao;
@@ -42,6 +43,7 @@ public class UserServiceImpl implements UserService{
         userDao.insert(user);
     }
 
+    @PreAuthorize("hasRole('ROLE_SUPER_USER')")
     @Transactional
     public void delete(User user) {
         User userForRemoving = userDao.getById(user.getIdUser());

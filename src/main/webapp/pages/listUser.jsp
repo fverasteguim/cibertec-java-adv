@@ -16,7 +16,7 @@
     <table>
         <tr>
             <td><h1>Mantenimiento de usuarios</h1></td>
-            <td></td>
+            <td style="text-align: right;"><a href="<c:url value='/j_spring_security_logout' />">Logout</a></td>
         </tr>
     </table>
 
@@ -27,6 +27,7 @@
     <th>Username</th>
     <th>Password</th>
     <th>Enabled</th>
+    <th>Role</th>
     <th>Accion</th>
     </tr>
 <s:iterator value="usuarios">
@@ -34,6 +35,10 @@
         <td><s:property value="username"/></td>
         <td><s:property value="password"/></td>
         <td><s:property value="enabled"/></td>
+        <td><s:iterator value="roles">
+                <s:property value="name"/>
+            </s:iterator>
+        </td>
         <td><a href="eliminarUsuario?id=<s:property value="idUser"/>">Eliminar</a></td>
     </tr>
 </s:iterator>

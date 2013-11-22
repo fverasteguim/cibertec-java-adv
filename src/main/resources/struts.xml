@@ -32,12 +32,12 @@
                 <action name="guardarAutor" 
 			class="autorAction" method="guardarAutor">
 			<result name="success" type="redirectAction">autorList</result>
-                        <result name="accessDenied">pages/accessdenied.jsp</result>
 		</action>
                 
                 <action name="eliminarAutor" 
 			class="autorAction" method="eliminarAutor">
 			<result name="success" type="redirectAction">autorList</result>
+                        <result name="accessDenied">pages/accessdenied.jsp</result>
 		</action>
                 
                 <action name="login">
@@ -56,13 +56,20 @@
                     <result name="success">pages/mainMenu.jsp</result>
                 </action>
                 
-                <!-- Usuarios -->
+                
+                
+                
+                
+	</package>
+        
+        <package name="adminModule" namespace="/admin" extends="default">
+            <!-- Usuarios -->
                 <action name="usuariosList" class="userAction" method="listarUsuarios">
-                    <result name="success">pages/listUser.jsp</result>
+                    <result name="success">/pages/listUser.jsp</result>
                 </action>
                 
                 <action name="nuevoUsuario" class="userAction" method="nuevoUsuario">
-                    <result name="success">pages/nuevoUser.jsp</result>
+                    <result name="success">/pages/nuevoUser.jsp</result>
                 </action>
                 
                 <action name="guardarUsuario" class="userAction" method="insertarUsuario">
@@ -71,14 +78,28 @@
                 
                 <action name="eliminarUsuario" class="userAction" method="eliminarUsuario">
                     <result name="success" type="redirectAction">usuariosList</result>
+                    <result name="accessDenied">/pages/accessdenied.jsp</result>
                 </action>
                 
                 <!-- Roles -->
                 <action name="rolesList" class="roleAction" method="listarRoles">
-                    <result name="success">pages/listRole.jsp</result>
+                    <result name="success">/pages/listRole.jsp</result>
                 </action>
                 
-	</package>
+                <action name="newRole" class="roleAction" method="nuevoRol">
+                    <result name="success">/pages/nuevoRole.jsp</result>
+                </action>
+                
+                <action name="guardarRole" class="roleAction" method="insertarRol">
+                    <result name="success" type="redirectAction">rolesList</result>
+                </action>
+                
+                <action name="eliminarRole" class="roleAction" method="eliminarRol">
+                    <result name="success" type="redirectAction">rolesList</result>
+                    <result name="accessDenied">/pages/accessdenied.jsp</result>
+                </action>
+            
+        </package>
 	
 	
 </struts>

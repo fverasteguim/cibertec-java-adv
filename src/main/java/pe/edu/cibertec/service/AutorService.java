@@ -17,9 +17,9 @@ import pe.edu.cibertec.model.Autor;
 public interface AutorService {
     public List<Autor> list();
     public Autor getById(Integer id);
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void insert(Autor autor) throws BusinessException1, BusinessException2;
     public void update(Autor autor);
+    @PreAuthorize("hasAnyRole('ROLE_MANAGER', 'ROLE_SUPER_USER')")
     public void delete(Autor autor);
     public String generateAutorSignature(Autor autor);
 }

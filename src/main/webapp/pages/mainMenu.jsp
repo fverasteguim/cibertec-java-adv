@@ -14,7 +14,8 @@
     </head>
     <body>
         <a href="<c:url value="/autorList" />" > Mantenimiento Autores</a><br>
-        <a href="<c:url value="/usuariosList" />" > Mantenimiento Usuarios</a><br>
-        <a href="<c:url value="/rolesList" />" > Mantenimiento Roles</a><br>
+        <a href="<c:url value="/admin/usuariosList" />" > Mantenimiento Usuarios</a><br>
+        <a href="<c:url value="/admin/rolesList" />" > Mantenimiento Roles</a><br>
+        <a href="<c:url value="/j_spring_security_logout" />" > Logout</a>
     </body>
 </html>

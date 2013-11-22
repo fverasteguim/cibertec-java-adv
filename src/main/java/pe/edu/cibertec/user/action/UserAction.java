@@ -4,6 +4,8 @@ import pe.edu.cibertec.user.bo.UserBo;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import pe.edu.cibertec.model.Role;
 import pe.edu.cibertec.model.User;
@@ -46,7 +48,12 @@ public class UserAction extends ActionSupport {
     public String eliminarUsuario() {
         usuario = new User();
         usuario.setIdUser(id);
-        service.delete(usuario);
+        try {
+            service.delete(usuario);
+        } catch (Exception ex) {
+            Logger.getLogger(UserAction.class.getName()).log(Level.SEVERE, null, ex);
+            return "accessDenied";
+        }
         return SUCCESS;
     }
     

@@ -16,7 +16,7 @@
     <table>
         <tr>
             <td><h1>Mantenimiento de Roles</h1></td>
-            <td></td>
+            <td style="text-align: right;"><a href="<c:url value='/j_spring_security_logout' />">Logout</a></td>
         </tr>
     </table>
 
@@ -31,10 +31,10 @@
 <s:iterator value="roles">
     <tr><td><s:property value="idRole"/></td>
         <td><s:property value="name"/></td>
-        <td><a href="eliminarRol?id=<s:property value="idRole"/>">Eliminar</a></td>
+        <td><a href="eliminarRole?id=<s:property value="idRole"/>">Eliminar</a></td>
     </tr>
 </s:iterator>
 </table>
-<a href="nuevoRol">Agregar nuevo rol</a>
+<a href="newRole">Agregar nuevo rol</a>
 </body>
 </html>

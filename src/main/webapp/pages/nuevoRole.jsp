@@ -13,12 +13,10 @@
 </head>
  
 <body>
-<h1>Struts 2 Example</h1>
+<h1>Nuevo Role</h1>
  
-<s:form action="guardarAutor">
-        <s:textfield label="Nombres" name="autor.nombres"/>
-	<s:textfield label="Apellido Paterno" name="autor.apePaterno"/>
-        <s:textfield label="Apellido Materno" name="autor.apeMaterno"/>
+<s:form action="guardarRole">
+        <s:textfield label="Nombres" name="role.name"/>
 	<s:submit value="Guardar"/>
 </s:form>
  
